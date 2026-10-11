@@ -1,0 +1,825 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bukhari Azhar — Portfolio</title>
+  <meta name="description" content="Bukhari Azhar — programmer, UI/UX, game developer and 3D designer." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Arimo:wght@400;700&family=Ballet&family=Figtree:wght@400;500;600;700;800;900&family=Permanent+Marker&family=Press+Start+2P&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ============ INTRO LOADER (star reveal) ============ -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <svg class="loader-svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <mask id="loaderMask">
+          <rect width="100" height="100" fill="#fff" />
+          <path class="loader-star" d="M50 30 C52 44 56 48 70 50 C56 52 52 56 50 70 C48 56 44 52 30 50 C44 48 48 44 50 30Z" fill="#000" />
+        </mask>
+      </defs>
+      <rect width="100" height="100" fill="#ff5fcf" mask="url(#loaderMask)" />
+    </svg>
+    <div class="loader-text">
+      <span class="loader-name">BUKHARI</span>
+      <span class="loader-bar"><i id="loaderBar"></i></span>
+    </div>
+  </div>
+
+  <!-- ============ PERSPECTIVE BACKGROUND WORLD ============ -->
+  <div class="world" id="world" aria-hidden="true">
+    <div class="world-inner">
+      <div class="world-layer world-sky" data-depth="0.06"></div>
+      <div class="world-tint" id="worldTint"></div>
+      <div class="world-layer" data-depth="0.16" data-fill="clouds" data-count="12" data-size="220-420" data-opacity="0.75"></div>
+      <div class="world-layer" data-depth="0.3" data-fill="sparkles" data-count="26" data-size="8-18"></div>
+      <div class="world-layer" data-depth="0.46" data-fill="clouds" data-count="8" data-size="380-640" data-opacity="0.9"></div>
+      <div class="world-layer" data-depth="0.78" data-fill="stickers" data-count="14" data-size="22-46"></div>
+    </div>
+  </div>
+
+  <!-- ============ HEADER ============ -->
+  <header class="header" id="header">
+    <div class="header-content">
+      <a class="header-logo" href="#home" aria-label="Back to top">
+        <span>B</span>
+      </a>
+
+      <nav class="header-nav" aria-label="Main">
+        <ul class="header-list">
+          <li><a class="pill" href="#about">About me</a></li>
+          <li><a class="pill" href="#education">Education</a></li>
+          <li><a class="pill" href="#projects">Projects</a></li>
+          <li><a class="pill" href="#experience">Experience</a></li>
+          <li><a class="pill" href="#gallery">Gallery</a></li>
+          <li><a class="pill" href="#contact">Get in Touch</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-buttons">
+        <span class="pill pill-status"><i class="dot"></i> Open to opportunities</span>
+        <button class="btn3d btn3d--yellow btn3d--sm" type="button" data-open-message>
+          <span class="btn3d-face">Let’s Talk <span class="emo"></span></span>
+        </button>
+        <button class="header-burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- mobile menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="mobile-menu-buttons">
+        <a class="btn3d btn3d--menu" href="#about"><span class="btn3d-face">About me</span></a>
+        <a class="btn3d btn3d--menu" href="#education"><span class="btn3d-face">Education</span></a>
+        <a class="btn3d btn3d--menu" href="#skills"><span class="btn3d-face">Skills</span></a>
+        <a class="btn3d btn3d--menu" href="#projects"><span class="btn3d-face">Projects</span></a>
+        <a class="btn3d btn3d--menu" href="#experience"><span class="btn3d-face">Experience</span></a>
+        <a class="btn3d btn3d--menu" href="#gallery"><span class="btn3d-face">Gallery</span></a>
+        <a class="btn3d btn3d--menu" href="#contact"><span class="btn3d-face">Get in touch</span></a>
+      </div>
+      <div class="mobile-menu-socials">
+        <a class="btn3d btn3d--pink btn3d--icon" href="mailto:bukhari@email.com" aria-label="Email"><span class="btn3d-face"><svg viewBox="0 0 24 24"><use href="#i-mail"/></svg></span></a>
+        <a class="btn3d btn3d--pink btn3d--icon" href="https://github.com/bukhacri" target="_blank" rel="noopener" aria-label="GitHub"><span class="btn3d-face"><svg viewBox="0 0 24 24"><use href="#i-github"/></svg></span></a>
+        <a class="btn3d btn3d--pink btn3d--icon" href="https://www.linkedin.com/in/bukhari-azhar" target="_blank" rel="noopener" aria-label="LinkedIn"><span class="btn3d-face"><svg viewBox="0 0 24 24"><use href="#i-linkedin"/></svg></span></a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="home" data-section>
+      <div class="hero-clouds-front" aria-hidden="true">
+        <div class="cloud cloud--front" style="--w:620px; left:-8%; bottom:-120px"></div>
+        <div class="cloud cloud--front" style="--w:720px; left:38%; bottom:-170px"></div>
+        <div class="cloud cloud--front" style="--w:560px; right:-10%; bottom:-110px"></div>
+      </div>
+
+      <div class="hero-stage" data-tilt>
+        <div class="hero-card" data-mouse-depth="0.25">
+          <img class="hero-paper" src="assets/img/ui/paper-torn-hero-big.webp" alt="" />
+          <h1 class="hero-title">
+            <span class="hero-line1 t-anton" data-split>Hi, my name</span>
+            <span class="hero-line2">
+              <span class="t-pixel hero-is">IS</span>
+              <span class="t-script hero-name">Bukhari</span>
+            </span>
+          </h1>
+        </div>
+
+        <ul class="hero-tags" data-mouse-depth="0.55">
+          <li class="tag tag--paper" style="--r:-2deg">programmer</li>
+          <li class="tag tag--pink" style="--r:3deg">ui/ux</li>
+          <li class="tag tag--paper" style="--r:1deg">creative designer</li>
+          <li class="tag tag--pink" style="--r:-3deg">vr developer</li>
+          <li class="tag tag--paper" style="--r:2deg">software developer</li>
+          <li class="tag tag--pink" style="--r:-1deg">front-end developer</li>
+          <li class="tag tag--paper" style="--r:3deg">3d designer</li>
+          <li class="tag tag--pink" style="--r:-3deg">game developer</li>
+        </ul>
+      </div>
+
+      <a class="scroll-cue" href="#about" aria-label="Scroll down">
+        <span>SCROLL</span>
+        <svg viewBox="0 0 24 24"><path d="M12 4v14m0 0-6-6m6 6 6-6" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square"/></svg>
+      </a>
+    </section>
+
+    <!-- ============ MARQUEE TAPE ============ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track" id="marqueeTrack">
+        <span>programmer</span><i>✦</i><span>ui/ux</span><i>✦</i><span>game developer</span><i>✦</i><span>3d designer</span><i>✦</i><span>front-end</span><i>✦</i><span>creative designer</span><i>✦</i>
+      </div>
+    </div>
+
+    <!-- ============ ABOUT ME ============ -->
+    <section class="about" id="about" data-section>
+      <div class="deco-float" data-speed="-0.6" style="left:4%; top:18%"><svg class="spark spark--pink" viewBox="0 0 24 24"><use href="#i-spark"/></svg></div>
+      <div class="deco-float" data-speed="0.8" style="left:46%; top:8%"><svg class="spark spark--yellow" viewBox="0 0 24 24"><use href="#i-spark"/></svg></div>
+      <div class="deco-float" data-speed="-0.4" style="right:6%; bottom:10%"><svg class="spark spark--cyan" viewBox="0 0 24 24"><use href="#i-spark"/></svg></div>
+
+      <div class="container about-grid">
+        <div class="about-left">
+          <h2 class="stitle stitle--left reveal-title">
+            <img class="stitle-paper" src="assets/img/ui/paper-about.webp" alt="" />
+            <span class="t-anton">About</span><span class="t-script">me</span>
+          </h2>
+
+          <!-- PLACEHOLDER: replace with your own intro -->
+          <div class="about-card reveal-up">
+            <p>Hey! I’m <strong>Bukhari,</strong> a Multimedia Computing graduate who loves building things people can <em>play</em>, <em>touch</em> and <em>explore</em>: games, VR worlds, apps and websites.</p>
+            <p>I mix code with design, from Unity and C# to Figma and Blender, and I care a lot about the little details that make an experience feel alive.</p>
+          </div>
+          <ul class="about-facts reveal-up">
+            <li><span>📍</span> Kedah, Malaysia</li>
+            <li><span>🎓</span> BCS (Hons.) Multimedia Computing</li>
+            <li><span>🎮</span> Games · VR · 3D · Web</li>
+          </ul>
+        </div>
+
+        <div class="about-showcase">
+          <div class="showcase-stage">
+            <button class="showcase-arrow showcase-arrow--prev" type="button" aria-label="Previous photo"></button>
+            <div class="showcase-frame" id="showcaseFrame">
+              <img decoding="async" loading="lazy" id="showcaseImg" src="assets/img/about/a1.webp" alt="Snapshot 1" />
+            </div>
+            <button class="showcase-arrow showcase-arrow--next" type="button" aria-label="Next photo"></button>
+          </div>
+          <div class="pedestal" aria-hidden="true">
+            <div class="pedestal-top"></div>
+            <div class="pedestal-body" id="pedestalBody"></div>
+          </div>
+        </div>
+
+        <ul class="about-thumbs" id="aboutThumbs">
+          <li><button type="button" class="is-active"><img decoding="async" src="assets/img/about/a1.webp" alt="Snapshot 1" loading="lazy" /></button></li>
+          <li><button type="button"><img decoding="async" src="assets/img/about/a2.webp" alt="Snapshot 2" loading="lazy" /></button></li>
+          <li><button type="button"><img decoding="async" src="assets/img/about/a3.webp" alt="Snapshot 3" loading="lazy" /></button></li>
+          <li><button type="button"><img decoding="async" src="assets/img/about/a4.webp" alt="Snapshot 4" loading="lazy" /></button></li>
+          <li><button type="button"><img decoding="async" src="assets/img/about/a5.webp" alt="Snapshot 5" loading="lazy" /></button></li>
+          <li><button type="button"><img decoding="async" src="assets/img/about/a6.webp" alt="Snapshot 6" loading="lazy" /></button></li>
+          <li><button type="button"><img decoding="async" src="assets/img/about/a7.webp" alt="Snapshot 7" loading="lazy" /></button></li>
+          <li><button type="button"><img decoding="async" src="assets/img/about/a8.webp" alt="Snapshot 8" loading="lazy" /></button></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ EDUCATION ============ -->
+    <section class="education" id="education" data-section>
+      <div class="edu-pin" id="eduPin">
+        <div class="container">
+          <h2 class="edu-title reveal-title">
+            <img src="assets/img/ui/tape-pink-big.webp" alt="" />
+            <span class="t-anton">Education</span>
+          </h2>
+
+          <div class="folders">
+            <!-- folder 1 -->
+            <article class="folder">
+              <div class="folder-back"></div>
+              <div class="folder-clip"><div class="folder-paper">
+                <div class="fp-years t-anton">2016 – 2020</div>
+                <div class="fp-photo"><img decoding="async" src="assets/img/projects/school.webp" alt="SMK USJ 12" loading="lazy" /></div>
+                <div class="fp-school">SMK USJ 12</div>
+                <p>Subang Jaya, Selangor</p>
+                <p>Computer Science Stream</p>
+                <p class="fp-result">Result: <b>8A 1B</b></p>
+              </div></div>
+              <div class="folder-front">
+                <div class="sticker sticker--green"><span>Sijil Pelajaran Malaysia (SPM)</span></div>
+              </div>
+            </article>
+
+            <!-- folder 2 — PLACEHOLDER details -->
+            <article class="folder">
+              <div class="folder-back"></div>
+              <div class="folder-clip"><div class="folder-paper">
+                <div class="fp-years t-anton">2021 – 2022</div>
+                <div class="fp-photo"><img decoding="async" src="assets/img/projects/UiTM Dengkil.webp" alt="UiTM Dengkil" loading="lazy" /></div>
+                <div class="fp-school">UiTM Kampus Dengkil</div>
+                <p>Dengkil, Selangor</p>
+                <p class="fp-result">CGPA: <b>3.63</b></p>
+              </div></div>
+              <div class="folder-front">
+                <div class="sticker sticker--blue"><span>Foundation In Engineering</span></div>
+              </div>
+            </article>
+
+            <!-- folder 3 — PLACEHOLDER details -->
+            <article class="folder">
+              <div class="folder-back"></div>
+              <div class="folder-clip"><div class="folder-paper">
+                <div class="fp-years t-anton">2022 – 2026</div>
+                <div class="fp-photo"><img decoding="async" src="assets/img/projects/UiTM Jasin.webp" alt="UiTM Jasin" loading="lazy" /></div>
+                <div class="fp-school">UiTM Kampus Jasin</div>
+                <p>Jasin, Melaka</p>
+                <p class="fp-result">CGPA: <b>3.65</b></p>
+              </div></div>
+              <div class="folder-front">
+                <div class="sticker sticker--red"><span>Bachelor of Computer Science (Hons.) – Multimedia Computing</span></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TECHNICAL SKILLS ============ -->
+    <section class="skills" id="skills" data-section>
+      <div class="container">
+        <h2 class="stitle reveal-title">
+          <img class="stitle-paper" src="assets/img/ui/paper-skills.webp" alt="" />
+          <span class="t-anton">Technical</span><span class="t-script">skills</span>
+        </h2>
+      </div>
+
+      <div class="signs container" id="signs">
+        <div class="sign sign--green">
+          <div class="sign-board">
+            <h3>Programming Languages</h3>
+            <ul class="sign-icons">
+              <li title="C"><img src="assets/img/skills/c.png" alt="C" /></li>
+              <li title="C#"><img src="assets/img/skills/csharp.png" alt="C#" /></li>
+              <li title="C++"><img src="assets/img/skills/cpp.png" alt="C++" /></li>
+              <li title="Java"><img src="assets/img/skills/java.png" alt="Java" /></li>
+              <li title="JavaScript"><img src="assets/img/skills/javascript.png" alt="JavaScript" /></li>
+              <li title="Kotlin"><img src="assets/img/skills/kotlin.png" alt="Kotlin" /></li>
+              <li title="PHP"><img src="assets/img/skills/php.png" alt="PHP" /></li>
+              <li title="Python"><img src="assets/img/skills/python.png" alt="Python" /></li>
+              <li title="TypeScript"><img src="assets/img/skills/typescript.png" alt="TypeScript" /></li>
+            </ul>
+          </div>
+          <div class="sign-poles"><i></i><i></i></div>
+        </div>
+
+        <div class="sign sign--blue">
+          <div class="sign-board">
+            <h3>Development Environments &amp; Tools</h3>
+            <ul class="sign-icons">
+              <li title="Anaconda"><img src="assets/img/skills/anaconda.png" alt="Anaconda" /></li>
+              <li title="Android Studio"><img src="assets/img/skills/android-studio.png" alt="Android Studio" /></li>
+              <li title="Eclipse"><img src="assets/img/skills/eclipse.png" alt="Eclipse" /></li>
+              <li title="MATLAB"><img src="assets/img/skills/matlab.png" alt="MATLAB" /></li>
+              <li title="Visual Studio"><img src="assets/img/skills/visual-studio.png" alt="Visual Studio" /></li>
+              <li title="VS Code"><img src="assets/img/skills/vscode.png" alt="VS Code" /></li>
+              <li title="WordPress"><img src="assets/img/skills/wordpress.png" alt="WordPress" /></li>
+            </ul>
+          </div>
+          <div class="sign-poles"><i></i><i></i></div>
+        </div>
+
+        <div class="sign sign--red">
+          <div class="sign-board">
+            <h3>Game Development &amp; 3D Software</h3>
+            <ul class="sign-icons">
+              <li title="Blender"><img src="assets/img/skills/blender.png" alt="Blender" /></li>
+              <li title="3D tool"><img src="assets/img/skills/game2.png" alt="3D tool" /></li>
+              <li title="SketchUp"><img src="assets/img/skills/sketchup.png" alt="SketchUp" /></li>
+              <li title="Unity"><img src="assets/img/skills/unity.png" alt="Unity" /></li>
+              <li title="Unreal Engine"><img src="assets/img/skills/unreal.png" alt="Unreal Engine" /></li>
+            </ul>
+          </div>
+          <div class="sign-poles"><i></i><i></i></div>
+        </div>
+
+        <div class="sign sign--yellow">
+          <div class="sign-board">
+            <h3>Markup &amp; Styling Languages</h3>
+            <ul class="sign-icons">
+              <li title="HTML5"><img src="assets/img/skills/html5.png" alt="HTML5" /></li>
+              <li title="CSS3"><img src="assets/img/skills/css3.png" alt="CSS3" /></li>
+            </ul>
+          </div>
+          <div class="sign-poles"><i></i><i></i></div>
+        </div>
+
+        <div class="sign sign--orange">
+          <div class="sign-board">
+            <h3>Databases, Frameworks &amp; Libraries</h3>
+            <ul class="sign-icons">
+              <li title="Flutter"><img src="assets/img/skills/flutter.png" alt="Flutter" /></li>
+              <li title="Laravel"><img src="assets/img/skills/laravel.png" alt="Laravel" /></li>
+              <li title="React"><img src="assets/img/skills/react.png" alt="React" /></li>
+              <li title="MySQL"><img src="assets/img/skills/mysql.png" alt="MySQL" /></li>
+              <li title="SQLite"><img src="assets/img/skills/sqlite.png" alt="SQLite" /></li>
+            </ul>
+          </div>
+          <div class="sign-poles"><i></i><i></i></div>
+        </div>
+
+        <div class="sign sign--brown">
+          <div class="sign-board">
+            <h3>Design &amp; Creative Software</h3>
+            <ul class="sign-icons">
+              <li title="Figma"><img src="assets/img/skills/figma.png" alt="Figma" /></li>
+              <li title="Illustrator"><img src="assets/img/skills/illustrator.png" alt="Illustrator" /></li>
+              <li title="Photoshop"><img src="assets/img/skills/photoshop.png" alt="Photoshop" /></li>
+              <li title="Premiere Pro"><img src="assets/img/skills/premiere.png" alt="Premiere Pro" /></li>
+            </ul>
+          </div>
+          <div class="sign-poles"><i></i><i></i></div>
+        </div>
+      </div>
+
+      <div class="hill" aria-hidden="true">
+        <img class="hill-grass" src="assets/img/ui/grass.webp" alt="" />
+        <img class="hill-cat" src="assets/img/ui/cat.webp" alt="" />
+      </div>
+    </section>
+
+    <!-- ============ FEATURED PROJECTS (conveyor) ============ -->
+    <section class="projects" id="projects" data-section>
+      <div class="conveyor" id="conveyor">
+        <div class="belt" id="belt"></div>
+        <div class="rail rail--left" id="railL"></div>
+        <div class="rail rail--right" id="railR"></div>
+
+        <div class="trays" id="trays">
+          <!-- ===== tray 1 ===== -->
+          <article class="tray" data-index="0">
+            <div class="tray-body">
+              <img class="tray-img" src="assets/img/ui/tray.webp" alt="" />
+              <div class="tray-content">
+                <figure class="polaroid">
+                  <img class="polaroid-clip" src="assets/img/ui/binder-clip.webp" alt="" />
+                  <img decoding="async" loading="lazy" class="polaroid-img" src="assets/img/projects/kl 1.webp" alt="KL Reimagined preview" />
+                </figure>
+                <div class="pins">
+                  <figure class="pin-photo" style="--r:-4deg"><img class="pushpin" src="assets/img/ui/pushpin.webp" alt="" /><img decoding="async" loading="lazy" src="assets/img/projects/kl 2.webp" alt="" /></figure>
+                  <figure class="pin-photo" style="--r:3deg"><img class="pushpin" src="assets/img/ui/pushpin.webp" alt="" /><img decoding="async" loading="lazy" src="assets/img/projects/kl 3.webp" alt="" /></figure>
+                  <figure class="pin-photo" style="--r:-3deg"><img class="pushpin" src="assets/img/ui/pushpin.webp" alt="" /><img decoding="async" loading="lazy" src="assets/img/projects/kl 4.webp" alt="" /></figure>
+                </div>
+                <div class="notebook">
+                  <h3 class="nb-title"><span>KL Reimagined: Immersive VR Tour of Kuala Lumpur attractions</span></h3>
+                  <p class="nb-desc">A standalone VR experience for Meta Quest 3 that lets users explore Kuala Lumpur’s landmarks, the Petronas Twin Towers, KL Tower and Muzium Negara through guided mini-tasks. Built in Unity with C#.</p>
+                  <ul class="nb-list">
+                    <li>Built three locomotion modes — teleportation, joystick movement and waypoint navigation, to suit different VR comfort levels</li>
+                    <li>Scripted interactive mini-tasks in C#, including snap-to-grid block building with structure validation and an animal catch-and-release activity</li>
+                    <li>Modelled and optimized the landmarks through iterative remodelling and proximity-based spawning to sustain performance on standalone hardware</li>
+                    <li>Designed info panels and spatial audio triggered by task progress to deliver landmark facts in context</li>
+                    <li>Added environmental polish with trigger-based automatic doors and a rotating skybox</li>
+                  </ul>
+                  <ul class="nb-tags"><li>unity</li><li>c#</li><li>meta quest 3</li><li>3d modelling</li></ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- ===== tray 2 — PLACEHOLDER text ===== -->
+          <article class="tray" data-index="1">
+            <div class="tray-body">
+              <img class="tray-img" src="assets/img/ui/tray.webp" alt="" />
+              <div class="tray-content">
+                <figure class="polaroid">
+                  <img class="polaroid-clip" src="assets/img/ui/binder-clip.webp" alt="" />
+                  <img decoding="async" loading="lazy" class="polaroid-img polaroid-img--poster" src="assets/img/projects/mba 1.webp" alt="Theatre MBA" />
+                </figure>
+                <div class="pins">
+                  <figure class="pin-photo pin-photo--ph" style="--r:-3deg"><img class="pushpin" src="assets/img/ui/pushpin.webp" alt="" /><img decoding="async" loading="lazy" src="assets/img/projects/mba 2.webp" alt="" /></figure>
+                  <figure class="pin-photo pin-photo--ph" style="--r:4deg"><img class="pushpin" src="assets/img/ui/pushpin.webp" alt="" /><img decoding="async" loading="lazy" src="assets/img/projects/mba 3.png" alt="" /></figure>
+                  <figure class="pin-photo pin-photo--ph" style="--r:4deg"><img class="pushpin" src="assets/img/ui/pushpin.webp" alt="" /><img decoding="async" loading="lazy" src="assets/img/projects/mba 4.png" alt="" /></figure>
+                </div>
+                <div class="notebook">
+                  <h3 class="nb-title nb-title--green"><span>Theatre MBA – Cinema Ticketing & Booking Platform</span></h3>
+                  <p class="nb-desc">A full-stack cinema booking system built with Laravel, rebuilt from an older PHP project to handle real-world problems like double-booked seats and safe cancellations.</p>
+                  <ul class="nb-list">
+                    <li>Architected an 8-table relational schema in MySQL, separating showtimes from seats so screening data is stored once rather than duplicated across every seat row</li>
+                    <li>Designed a cancellation system using a MySQL stored generated column with a NULL-aware unique index, letting cancelled seats return to sale while preserving a complete booking audit trail</li>
+                    <li>Built a role-based admin panel with sales reporting, CSV export, and an all-or-nothing bulk CSV import that validates every row before writing, preventing partial or corrupted schedules</li>
+                  </ul>
+                  <ul class="nb-tags"><li>php</li><li>mysql</li><li>laravel</li><li>tailwind css</li><li>javascript</li></ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- ===== tray 3 — PLACEHOLDER text ===== -->
+          <article class="tray" data-index="2">
+            <div class="tray-body">
+              <img class="tray-img" src="assets/img/ui/tray.webp" alt="" />
+              <div class="tray-content">
+                <figure class="polaroid">
+                  <img class="polaroid-clip" src="assets/img/ui/binder-clip.webp" alt="" />
+                  <img decoding="async" loading="lazy" class="polaroid-img polaroid-img--poster" src="assets/img/projects/Reyoung 1.webp" alt="Reyoung Beaute website redesign" />
+                </figure>
+                <div class="pins">
+                  <figure class="pin-photo pin-photo--ph" style="--r:2deg"><img class="pushpin" src="assets/img/ui/pushpin.webp" alt="" /><img decoding="async" loading="lazy" src="assets/img/projects/Reyoung 2.webp" alt="" /></figure>
+                  <figure class="pin-photo pin-photo--ph" style="--r:-4deg"><img class="pushpin" src="assets/img/ui/pushpin.webp" alt="" /><img decoding="async" loading="lazy" src="assets/img/projects/Reyoung 3.webp" alt="" /></figure>
+                  <figure class="pin-photo pin-photo--ph" style="--r:-4deg"><img class="pushpin" src="assets/img/ui/pushpin.webp" alt="" /><img decoding="async" loading="lazy" src="assets/img/projects/Reyoung 4.webp" alt="" /></figure>
+                  <figure class="pin-photo pin-photo--ph" style="--r:-4deg"><img class="pushpin" src="assets/img/ui/pushpin.webp" alt="" /><img decoding="async" loading="lazy" src="assets/img/projects/Reyoung 5.webp" alt="" /></figure>
+                </div>
+                <div class="notebook">
+                  <h3 class="nb-title nb-title--red"><span>Reyoung Beaute: Skincare Website Redesign (Internship Project)</span></h3>
+                  <p class="nb-desc">A website for skincare client Reyoung Beaute, built in WordPress and Elementor during my internship at JustSimple Digital. The redesign modernised the client's online presence while keeping all the content from their previous site.</p>
+                  <ul class="nb-list">
+                    <li>Redesigned the client's legacy website into a modern, user-friendly layout, restructuring the existing company history and product content without losing any information</li>
+                    <li>Built the site structure (header, footer and navigation) and page templates with Elementor's Theme Builder</li>
+                    <li>Made the layout responsive so it works on both desktop and mobile devices</li>
+                    <li>Optimised the site for performance and SEO</li>
+                    <li>Refined the mockup using feedback from the internal quality-check team before presenting it to the client for final approval</li>
+                  </ul>
+                  <ul class="nb-tags"><li>WordPress</li><li>Elementor</li><li>CSS</li><li>HTML</li><li>JavaScript</li><li>UI/UX Design</li></ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- ===== tray 4 — PLACEHOLDER text ===== -->
+          <article class="tray" data-index="3">
+            <div class="tray-body">
+              <img class="tray-img" src="assets/img/ui/tray.webp" alt="" />
+              <div class="tray-content">
+                <figure class="polaroid">
+                  <img class="polaroid-clip" src="assets/img/ui/binder-clip.webp" alt="" />
+                  <img decoding="async" loading="lazy" class="polaroid-img polaroid-img--poster" src="assets/img/projects/bmw 1.webp" alt="BMW Malaysia – Online Car Shopping Website" />
+                </figure>
+                <div class="pins">
+                  <figure class="pin-photo" style="--r:-4deg"><img class="pushpin" src="assets/img/ui/pushpin.webp" alt="" /><img decoding="async" loading="lazy" src="assets/img/projects/bmw 2.webp" alt="" /></figure>
+                  <figure class="pin-photo" style="--r:3deg"><img class="pushpin" src="assets/img/ui/pushpin.webp" alt="" /><img decoding="async" loading="lazy" src="assets/img/projects/bmw 3.webp" alt="" /></figure>
+                  <figure class="pin-photo" style="--r:-4deg"><img class="pushpin" src="assets/img/ui/pushpin.webp" alt="" /><img decoding="async" loading="lazy" src="assets/img/projects/bmw 4.webp" alt="" /></figure>
+                </div>
+                <div class="notebook">
+                  <h3 class="nb-title nb-title--blue"><span>BMW Malaysia – Online Car Shopping Website</span></h3>
+                  <p class="nb-desc">A multi-page vehicle browsing site built with plain HTML, CSS and JavaScript. Users can filter the catalogue, view each car in a photo gallery, and step through a simulated test drive booking from form to payment to receipt.</p>
+                  <ul class="nb-list">
+                    <li>Built a 20-page responsive front end with a shared stylesheet and script, covering home, shop, models, car details, booking, payment and account pages</li>
+                    <li>Implemented a dynamic product catalogue with client-side filtering by price, body type, fuel and dealership location</li>
+                    <li>Designed a simulated booking flow that carries the selected car and customer details from the test drive form through payment to a printable receipt</li>
+                    <li>Added form validation for login, registration and card payment using native HTML constraints and JavaScript</li>
+                  </ul>
+                  <ul class="nb-tags"><li>html5</li><li>css3</li><li>javascript</li><li>mockup</li></ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+                    <!-- ===== tray 5 — PLACEHOLDER text ===== -->
+          <article class="tray" data-index="3">
+            <div class="tray-body">
+              <img class="tray-img" src="assets/img/ui/tray.webp" alt="" />
+              <div class="tray-content">
+                <figure class="polaroid">
+                  <img class="polaroid-clip" src="assets/img/ui/binder-clip.webp" alt="" />
+                  <img decoding="async" loading="lazy" class="polaroid-img polaroid-img--poster" src="assets/img/projects/healthy 1.png" alt="Healthy vs Unhealthy poster" />
+                </figure>
+                <div class="pins">
+                  <figure class="pin-photo" style="--r:-4deg"><img class="pushpin" src="assets/img/ui/pushpin.webp" alt="" /><img decoding="async" loading="lazy" src="assets/img/projects/healthy 2.png" alt="" /></figure>
+                  <figure class="pin-photo" style="--r:3deg"><img class="pushpin" src="assets/img/ui/pushpin.webp" alt="" /><img decoding="async" loading="lazy" src="assets/img/projects/healthy 3.png" alt="" /></figure>
+                </div>
+                <div class="notebook">
+                  <h3 class="nb-title nb-title--red"><span>Healthy vs Unhealthy: Behaviour-Based Health Status Predictor</span></h3>
+                  <p class="nb-desc">A machine learning system that predicts whether a person is healthy or unhealthy from 12 daily lifestyle habits, trained on a 500-response survey. Random Forest classifier with 92% accuracy on unseen data, served through an interactive Streamlit web app.</p>
+                  <ul class="nb-list">
+                    <li>Designed and ran a bilingual (English/Malay) Google Forms survey, collecting 500 responses on sleep, diet, exercise, stress and other daily habits</li>
+                    <li>Built a data cleaning pipeline in pandas that corrects entry errors, handles missing answers and encodes categorical responses with explicit, ordered mappings</li>
+                    <li>Compared seven classification algorithms using stratified 10-fold cross-validation, then tuned a Random Forest across 72 hyperparameter combinations with grid search</li>
+                    <li>Achieved 92% accuracy on a held-out test set using behaviour features alone, matching the accuracy of BMI as a predictor</li>
+                    <li>Built the model as a Streamlit web app with a guided input form, confidence scores and a model explanation panel</li>
+                  </ul>
+                  <ul class="nb-tags"><li>python</li><li>random forest</li><li>scikit-learn</li><li>pandas</li><li>seaborn</li><li>streamlit</li></ul>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- hood (camera-locked top of the machine) -->
+        <div class="hood">
+          <div class="hood-panel">
+            <div class="hood-lcd"><span id="projCounter">01</span>/<span id="projTotal">04</span></div>
+            <div class="hood-lights" id="hoodLights"></div>
+          </div>
+          <h2 class="stitle stitle--hood">
+            <img class="stitle-paper" src="assets/img/ui/paper-projects.webp" alt="" />
+            <span class="t-anton">Featured</span><span class="t-script">projects</span>
+          </h2>
+          <div class="hood-lip"></div>
+        </div>
+
+        <div class="conveyor-hint" id="conveyorHint">keep scrolling ↓</div>
+      </div>
+    </section>
+
+    <!-- ============ WORK EXPERIENCE (printer) ============ -->
+    <section class="experience" id="experience" data-section>
+      <div class="deco-float" data-speed="0.7" style="left:6%; top:30%"><svg class="spark spark--pink" viewBox="0 0 24 24"><use href="#i-spark"/></svg></div>
+      <div class="deco-float" data-speed="-0.5" style="right:8%; top:20%"><svg class="spark spark--cyan" viewBox="0 0 24 24"><use href="#i-spark"/></svg></div>
+      <div class="deco-float" data-speed="0.4" style="right:12%; top:62%"><svg class="pixel-heart" viewBox="0 0 7 6"><use href="#i-heart"/></svg></div>
+
+      <div class="container">
+        <h2 class="stitle stitle--work reveal-title">
+          <img class="stitle-paper" src="assets/img/ui/paper-work.webp" alt="" />
+          <span class="t-script">Work</span><span class="t-anton">Experience</span>
+        </h2>
+
+        <div class="printer" id="printer">
+          <div class="printer-head">
+            <div class="printer-led" id="printerLed"></div>
+            <div class="printer-label">PRINTING<span>...</span></div>
+            <div class="printer-slot"></div>
+          </div>
+          <div class="printer-out">
+            <div class="receipt" id="receipt">
+              <div class="receipt-top">
+                <span>BUKHARI.CV</span>
+                <span>RECEIPT #2026</span>
+              </div>
+
+              <div class="job">
+                <div class="job-row">
+                  <h3>Web Development &amp; Multimedia Intern</h3>
+                  <span>Damansara, Selangor</span>
+                </div>
+                <div class="job-row job-row--sub">
+                  <strong>JustSimple Digital Sdn Bhd</strong>
+                  <span>Sept. 2025 – Feb. 2026</span>
+                </div>
+                <ul>
+                  <li>Built and optimized responsive commercial websites in WordPress/Elementor, adding multilingual localization and restructuring legacy content to improve UX and visual consistency.</li>
+                  <li>Led end-to-end video production for commercial campaigns — trend research, storyboarding, filming, and post-production editing in CapCut and Adobe Premiere Pro.</li>
+                  <li>Designed social media assets and executed digital marketing campaigns, applying data-driven strategies from professional agency training.</li>
+                </ul>
+              </div>
+
+              <!-- PLACEHOLDER job -->
+              <div class="job">
+                <div class="job-row">
+                  <h3>Freelance Talent &amp; Production Coordinator</h3>
+                </div>
+                <div class="job-row job-row--sub">
+                  <strong>JustSimple Digital Sdn Bhd</strong>
+                  <span>Jan. 2026 – Sept. 2026</span>
+                </div>
+                <ul>
+                  <li>Managed talent sourcing and coordination for commercial, lifestyle, fashion, and social media content productions.</li>
+                  <li>Liaised with clients, talents, and production teams to coordinate schedules, rates, deliverables, and shoot requirements.</li>
+                  <li>Prepared talent briefs and communicated scripts, references, styling requirements, and production details.</li>
+                  <li>Coordinated multiple talents and deliverables across different campaigns while ensuring project requirements were met.</li>
+                </ul>
+              </div>
+
+              <!-- PLACEHOLDER job -->
+              <div class="job">
+                <div class="job-row">
+                  <h3>Freelance Junior Graphic Designer</h3>
+                </div>
+                <div class="job-row job-row--sub">
+                  <strong>Freelance</strong>
+                  <span>Jul. 2026 – Current</span>
+                </div>
+                <ul>
+                  <li>Designed posters and visual materials for academic and project-related purposes.</li>
+                  <li>Developed layouts, typography, colour schemes, and visual elements according to project requirements.</li>
+                  <li>Created and refined designs from initial concepts through to final output using graphic design software.</li>
+                </ul>
+              </div>
+
+                            <!-- PLACEHOLDER job -->
+              <div class="job">
+                <div class="job-row">
+                  <h3>Part-time Parcel Dispatcher</h3>
+                  <span>Jitra, Kedah</span>
+                </div>
+                <div class="job-row job-row--sub">
+                  <strong>J&T Express</strong>
+                  <span>Aug. 2023 – Oct. 2023</span>
+                </div>
+                <ul>
+                  <li>Sorted, scanned, and organized parcels according to delivery routes and destinations.</li>
+                  <li>Coordinated parcel handovers with delivery personnel and ensured accurate dispatch.</li>
+                  <li>Assisted with loading, unloading, and daily warehouse operations while handling high parcel volumes.</li>
+                </ul>
+              </div>
+
+              <div class="receipt-total">
+                <span>SKILLS GAINED</span><span>∞</span>
+              </div>
+              <svg class="barcode" id="barcode" viewBox="0 0 320 34" preserveAspectRatio="none" aria-hidden="true"></svg>
+              <p class="receipt-thanks">THANK YOU FOR SCROLLING ✦</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CREATIVE GALLERY (clotheslines) ============ -->
+    <section class="gallery" id="gallery" data-section>
+      <div class="container">
+        <h2 class="stitle stitle--gallery reveal-title">
+          <img class="stitle-paper" src="assets/img/ui/paper-gallery.webp" alt="" />
+          <span class="t-script">Creative</span><span class="t-anton">Gallery</span>
+        </h2>
+      </div>
+
+      <div class="lines">
+        <div class="line" data-drift="-1">
+          <img class="rope" src="assets/img/ui/rope.webp" alt="" />
+          <div class="line-items">
+            <button class="hang" type="button" data-full="assets/img/gallery/1.webp"><img class="peg" src="assets/img/ui/peg.webp" alt="" /><img decoding="async" class="poster" width="1000" height="1415" src="assets/img/gallery/1.webp" alt="Flight Delay Prediction poster" loading="lazy" /></button>
+            <button class="hang" type="button" data-full="assets/img/gallery/2.webp"><img class="peg" src="assets/img/ui/peg.webp" alt="" /><img decoding="async" class="poster" width="1000" height="1415" src="assets/img/gallery/2.webp" alt="Immersive Character Building VR poster" loading="lazy" /></button>
+            <button class="hang" type="button" data-full="assets/img/gallery/3.webp"><img class="peg" src="assets/img/ui/peg.webp" alt="" /><img decoding="async" class="poster" width="1000" height="1415" src="assets/img/gallery/3.webp" alt="Localised News Aggregator poster" loading="lazy" /></button>
+          </div>
+        </div>
+        <div class="line" data-drift="1">
+          <img class="rope" src="assets/img/ui/rope.webp" alt="" />
+          <div class="line-items">
+            <button class="hang" type="button" data-full="assets/img/gallery/4.webp"><img class="peg" src="assets/img/ui/peg.webp" alt="" /><img decoding="async" class="poster" width="1000" height="1415" src="assets/img/gallery/4.webp" alt="Cognitive Rehabilitation VR poster" loading="lazy" /></button>
+            <button class="hang" type="button" data-full="assets/img/gallery/5.webp"><img class="peg" src="assets/img/ui/peg.webp" alt="" /><img decoding="async" class="poster" width="1000" height="1415" src="assets/img/gallery/5.webp" alt="Hang Tuah RPG poster" loading="lazy" /></button>
+            <button class="hang" type="button" data-full="assets/img/gallery/6.webp"><img class="peg" src="assets/img/ui/peg.webp" alt="" /><img decoding="async" class="poster" width="1000" height="1415" src="assets/img/gallery/6.webp" alt="KL Reimagined poster" loading="lazy" /></button>
+          </div>
+        </div>
+        <div class="line" data-drift="-1">
+          <img class="rope" src="assets/img/ui/rope.webp" alt="" />
+          <div class="line-items">
+            <button class="hang" type="button" data-full="assets/img/gallery/7.webp"><img class="peg" src="assets/img/ui/peg.webp" alt="" /><img decoding="async" class="poster" width="1000" height="1415" src="assets/img/gallery/7.webp" alt="LC Waikiki poster 1" loading="lazy" /></button>
+            <button class="hang" type="button" data-full="assets/img/gallery/8.webp"><img class="peg" src="assets/img/ui/peg.webp" alt="" /><img decoding="async" class="poster" width="1000" height="1415" src="assets/img/gallery/8.webp" alt="LC Waikiki poster 2" loading="lazy" /></button>
+            <button class="hang" type="button" data-full="assets/img/gallery/9.webp"><img class="peg" src="assets/img/ui/peg.webp" alt="" /><img decoding="async" class="poster" width="1000" height="1415" src="assets/img/gallery/9.webp" alt="LC Waikiki poster 3" loading="lazy" /></button>
+          </div>
+        </div>
+        <div class="line" data-drift="1">
+          <img class="rope" src="assets/img/ui/rope.webp" alt="" />
+          <div class="line-items">
+            <button class="hang" type="button" data-full="assets/img/gallery/10.png"><img class="peg" src="assets/img/ui/peg.webp" alt="" /><img decoding="async" class="poster" width="1000" height="1415" src="assets/img/gallery/10.png" alt="KLCC model" loading="lazy" /></button>
+            <button class="hang" type="button" data-full="assets/img/gallery/11.png"><img class="peg" src="assets/img/ui/peg.webp" alt="" /><img decoding="async" class="poster" width="1000" height="1415" src="assets/img/gallery/11.png" alt="Muzium Negara model" loading="lazy" /></button>
+            <button class="hang" type="button" data-full="assets/img/gallery/12.png"><img class="peg" src="assets/img/ui/peg.webp" alt="" /><img decoding="async" class="poster" width="1000" height="1415" src="assets/img/gallery/12.png" alt="KL Tower model" loading="lazy" /></button>
+          </div>
+        </div>
+        <div class="line" data-drift="-1">
+          <img class="rope" src="assets/img/ui/rope.webp" alt="" />
+          <div class="line-items">
+            <button class="hang" type="button" data-full="assets/img/gallery/13.webp"><img class="peg" src="assets/img/ui/peg.webp" alt="" /><img decoding="async" class="poster" width="1000" height="1415" src="assets/img/gallery/13.webp" alt="Cactus model" loading="lazy" /></button>
+            <button class="hang" type="button" data-full="assets/img/gallery/14.webp"><img class="peg" src="assets/img/ui/peg.webp" alt="" /><img decoding="async" class="poster" width="1000" height="1415" src="assets/img/gallery/14.webp" alt="Store model" loading="lazy" /></button>
+            <div class="hang hang--ph"><img class="peg" src="assets/img/ui/peg.webp" alt="" /><div class="poster poster--ph"><span>coming<br/>soon ✦</span></div></div>
+          </div>
+        </div>
+        <div class="line" data-drift="1">
+          <img class="rope" src="assets/img/ui/rope.webp" alt="" />
+          <div class="line-items">
+            <button class="hang" type="button" data-full="assets/img/gallery/16.webp"><img class="peg" src="assets/img/ui/peg.webp" alt="" /><img decoding="async" class="poster" width="1000" height="1415" src="assets/img/gallery/16.webp" alt="DevRoll 1" loading="lazy" /></button>
+            <button class="hang" type="button" data-full="assets/img/gallery/17.webp"><img class="peg" src="assets/img/ui/peg.webp" alt="" /><img decoding="async" class="poster" width="1000" height="1415" src="assets/img/gallery/17.webp" alt="DevRoll 2" loading="lazy" /></button>
+            <button class="hang" type="button" data-full="assets/img/gallery/18.webp"><img class="peg" src="assets/img/ui/peg.webp" alt="" /><img decoding="async" class="poster" width="1000" height="1415" src="assets/img/gallery/18.webp" alt="DevRoll 3" loading="lazy" /></button>
+          </div>
+        </div>
+        <div class="line" data-drift="-1">
+          <img class="rope" src="assets/img/ui/rope.webp" alt="" />
+          <div class="line-items">
+            <button class="hang" type="button" data-full="assets/img/gallery/19.webp"><img class="peg" src="assets/img/ui/peg.webp" alt="" /><img decoding="async" class="poster" width="1000" height="1415" src="assets/img/gallery/19.webp" alt="KL Reimagined slide" loading="lazy" /></button>
+            <button class="hang" type="button" data-full="assets/img/gallery/20.webp"><img class="peg" src="assets/img/ui/peg.webp" alt="" /><img decoding="async" class="poster" width="1000" height="1415" src="assets/img/gallery/20.webp" alt="Poster" loading="lazy" /></button>
+            <button class="hang" type="button" data-full="assets/img/gallery/21.webp"><img class="peg" src="assets/img/ui/peg.webp" alt="" /><img decoding="async" class="poster" width="1000" height="1415" src="assets/img/gallery/21.webp" alt="Tourism thumbnail" loading="lazy" /></button>
+          </div>
+        </div>        
+        <!-- PLACEHOLDER row for future work -->
+        <div class="line" data-drift="1">
+          <img class="rope" src="assets/img/ui/rope.webp" alt="" />
+          <div class="line-items">
+            <div class="hang hang--ph"><img class="peg" src="assets/img/ui/peg.webp" alt="" /><div class="poster poster--ph"><span>coming<br/>soon ✦</span></div></div>
+            <div class="hang hang--ph"><img class="peg" src="assets/img/ui/peg.webp" alt="" /><div class="poster poster--ph"><span>your next<br/>design</span></div></div>
+            <div class="hang hang--ph"><img class="peg" src="assets/img/ui/peg.webp" alt="" /><div class="poster poster--ph"><span>coming<br/>soon ✦</span></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ GET IN TOUCH ============ -->
+    <section class="contact" id="contact" data-section>
+      <div class="contact-edge" aria-hidden="true"></div>
+      <div class="container contact-grid">
+        <div class="contact-left">
+          <h2 class="stitle reveal-title">
+            <img class="stitle-paper" src="assets/img/ui/paper-contact.webp" alt="" />
+            <span class="t-anton">Get in</span><span class="t-script">touch</span>
+          </h2>
+          <p class="contact-sub">Interested in working together? Feel free to reach out through any of the channels below.</p>
+
+          <div class="contact-main">
+          <ul class="contact-list">
+            <li>
+              <a class="contact-row" href="mailto:bukhacri@gmail.com">
+                <span class="btn3d btn3d--pink btn3d--icon"><span class="btn3d-face"><svg viewBox="0 0 24 24"><use href="#i-mail"/></svg></span></span>
+                <span class="btn3d btn3d--pink btn3d--wide"><span class="btn3d-face">bukhacri@gmail.com</span></span>
+              </a>
+            </li>
+            <li>
+              <a class="contact-row" href="tel:+6012345789">
+                <span class="btn3d btn3d--pink btn3d--icon"><span class="btn3d-face"><svg viewBox="0 0 24 24"><use href="#i-phone"/></svg></span></span>
+                <span class="btn3d btn3d--pink btn3d--wide"><span class="btn3d-face">+601111889098</span></span>
+              </a>
+            </li>
+            <li>
+              <a class="contact-row" href="https://github.com/bukhacri" target="_blank" rel="noopener">
+                <span class="btn3d btn3d--pink btn3d--icon"><span class="btn3d-face"><svg viewBox="0 0 24 24"><use href="#i-github"/></svg></span></span>
+                <span class="btn3d btn3d--pink btn3d--wide"><span class="btn3d-face">bukhacri</span></span>
+              </a>
+            </li>
+            <li>
+              <a class="contact-row" href="https://www.linkedin.com/in/bukhari-azhar" target="_blank" rel="noopener">
+                <span class="btn3d btn3d--pink btn3d--icon"><span class="btn3d-face"><svg viewBox="0 0 24 24"><use href="#i-linkedin"/></svg></span></span>
+                <span class="btn3d btn3d--pink btn3d--wide"><span class="btn3d-face">bukhari-azhar</span></span>
+              </a>
+            </li>
+          </ul>
+
+          <!-- resume: replace the PDF at assets/resume/Bukhari-Azhar-Resume.pdf with your own (keep the same file name) -->
+          <div class="resume" id="resume">
+            <a class="resume-sheet" href="assets/resume/Bukhari-Azhar-Resume.pdf" target="_blank" rel="noopener" data-open-resume aria-label="View my resume">
+              <img class="resume-clip" src="assets/img/ui/binder-clip.webp" alt="" />
+              <span class="resume-head t-anton">Resume</span>
+              <span class="resume-lines" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+              <span class="resume-stamp">PDF</span>
+            </a>
+            <div class="resume-actions">
+              <a class="btn3d btn3d--yellow" href="assets/resume/Bukhari-Azhar-Resume.pdf" target="_blank" rel="noopener" data-open-resume><span class="btn3d-face">View resume 👀</span></a>
+              <a class="btn3d btn3d--pink" href="assets/resume/Bukhari-Azhar-Resume.pdf" download><span class="btn3d-face">Download ⬇</span></a>
+            </div>
+          </div>
+          </div>
+        </div>
+
+        <div class="contact-right">
+          <div class="bubble" id="bubble">psst… say hi!</div>
+          <img class="me" id="me" src="assets/img/ui/me-cutout.webp" alt="Bukhari" />
+        </div>
+      </div>
+
+      <footer class="footer">
+        <span>© <span id="year">2026</span> Bukhari Azhar</span>
+        <a href="#home" class="footer-top">back to top ↑</a>
+      </footer>
+    </section>
+  </main>
+
+  <!-- ============ MESSAGE POPUP ============ -->
+  <div class="modal" id="messageModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+    <div class="modal-backdrop" data-close-modal></div>
+    <form class="modal-card" id="messageForm">
+      <button class="modal-close" type="button" aria-label="Close" data-close-modal>✕</button>
+      <h2 id="modalTitle" class="t-anton">Let’s <span class="t-script">talk</span></h2>
+      <label>Your name<input name="name" required autocomplete="name" /></label>
+      <label>Your email<input name="email" type="email" required autocomplete="email" /></label>
+      <label>Message<textarea name="message" rows="4" required></textarea></label>
+      <button class="btn3d btn3d--yellow" type="submit"><span class="btn3d-face">Send it ✉️</span></button>
+      <p class="modal-note">Opens your email app with the message ready to go.</p>
+    </form>
+  </div>
+
+  <!-- ============ RESUME VIEWER ============ -->
+  <div class="modal" id="resumeModal" role="dialog" aria-modal="true" aria-label="Resume" hidden>
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-card resume-viewer">
+      <div class="resume-viewer-bar">
+        <span class="t-anton">Resume</span>
+        <a class="btn3d btn3d--pink btn3d--sm" href="assets/resume/Bukhari-Azhar-Resume.pdf" download><span class="btn3d-face">Download ⬇</span></a>
+        <a class="btn3d btn3d--yellow btn3d--sm" href="assets/resume/Bukhari-Azhar-Resume.pdf" target="_blank" rel="noopener"><span class="btn3d-face">New tab ↗</span></a>
+        <button class="modal-close" type="button" aria-label="Close" data-close-modal>✕</button>
+      </div>
+      <iframe id="resumeFrame" title="Resume (PDF)"></iframe>
+    </div>
+  </div>
+
+  <!-- ============ LIGHTBOX ============ -->
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lightbox-close" type="button" aria-label="Close">✕</button>
+    <img id="lightboxImg" src="" alt="" />
+  </div>
+
+  <!-- ============ SVG SPRITES ============ -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 1c1 7 4 10 11 11-7 1-10 4-11 11-1-7-4-10-11-11 7-1 10-4 11-11Z"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 7 6"><path d="M1 0h2v1h1V0h2v1h1v2H6v1H5v1H4v1H3V5H2V4H1V3H0V1h1Z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><path d="M3 6h18v12H3z M3 6l9 7 9-7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 3.5 9 3l1.6 4.2-2 1.4a12 12 0 0 0 6.8 6.8l1.4-2L21 15l-.5 2.4c-.2 1-1.1 1.7-2.1 1.6C10.6 18.4 5.6 13.4 5 5.6c-.1-1 .6-1.9 1.6-2.1Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+    <symbol id="i-github" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .5a11.5 11.5 0 0 0-3.6 22.4c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.2c0 .3.2.7.8.6A11.5 11.5 0 0 0 12 .5Z"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M3 3h18v18H3V3Zm3.2 7.3V18h2.6v-7.7H6.2Zm1.3-3.8a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Zm3.3 3.8V18h2.6v-4.1c0-1.1.2-2.1 1.5-2.1s1.4 1.2 1.4 2.2v4h2.6v-4.6c0-2.3-.5-4-3.1-4-1.3 0-2.1.7-2.5 1.3v-1.1h-2.5Z"/></symbol>
+  </svg>
+
+  <!-- libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
